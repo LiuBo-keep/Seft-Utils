@@ -44,6 +44,8 @@ public class ExcelUtil<T> {
             default:
                 throw new Exception("不存在该版本");
         }
+        
+        // 样式
         CellStyle cellStyle = workbook != null ? workbook.createCellStyle() : null;
         Font font = workbook != null ? workbook.createFont() : null;
         if (null != cellStyle && null != font) {
@@ -52,6 +54,7 @@ public class ExcelUtil<T> {
             font.setFontHeightInPoints((short) 12);
             cellStyle.setFont(font);
         }
+        
         Sheet sheet = workbook.createSheet();
         try {
             // 小标题
